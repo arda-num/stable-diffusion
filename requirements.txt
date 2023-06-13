@@ -5,3 +5,4 @@ Pillow==9.5.0
 torch==2.0.1
 transformers==4.30.1
 uvicorn
+accelerate
