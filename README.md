@@ -54,4 +54,18 @@ curl -o download.png --location --request POST 'http://127.0.0.1:8000/removeback
 
 ### If you are getting an error called "stable-diffusion-api-1 exited with code 137", 
 
-This is because the docker container is running out of memory. You can increase the memory limit of the container by going to Docker Desktop -> Settings -> Resources -> Advanced -> Memory and increasing the memory limit OR changing the limits and reservations in docker-compose.yml file.
+This is because the docker container is running out of memory. You can increase the memory limit of the container by going to Docker Desktop -> Settings -> Resources -> Advanced -> Memory and increasing the memory limit 
+
+OR 
+
+you can try changing the limits and reservations in docker-compose.yml file.
+
+```bash
+deploy:
+    resources:
+    limits:
+        memory: 500M
+    reservations:
+        memory: 128M
+```
+
