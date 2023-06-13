@@ -32,8 +32,17 @@ docker build -t background-removal-api .
 docker run -d --name background-removal-api -p 80:80 background-removal-api
 ```
 
-### 4. Test the API
+### 4. Test the API (Sample Requests)
 
+#### Inpainting
 ```bash
-curl -X POST "http://localhost:80/remove_background" -H "accept: application/json" -H "Content-Type: multipart/form-data" -F "image=@<path_to_image>"
+curl -o download.png --location --request POST 'http://127.0.0.1:8000/inpaint' \
+--form 'prompt="a bottle of perfume with confetti in the background, a digital rendering by Jeff Koons, cg society contest winner, new objectivity, vray tracing, dynamic composition, rendered in unreal engine"' \
+--form 'image=@"path/to/image.png"'
+```
+
+#### Remove Background
+```bash
+curl -o download.png --location --request POST 'http://127.0.0.1:8000/removebackground' \
+--form 'image=@"path/to/image.png"' 
 ```
