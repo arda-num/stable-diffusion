@@ -8,7 +8,7 @@ This API is used to remove the background of an image and place the product on a
 ## Requirements
 
 - Docker
-- Nvidia GPU (Optional)
+- Nvidia GPU (optional but recommended)
 
 ## Usage
 
