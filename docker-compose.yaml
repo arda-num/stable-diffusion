@@ -7,6 +7,12 @@ services:
       - .:/app
     ports:
       - 8000:8000
+    # deploy:
+    #   resources:
+    #     limits:
+    #       memory: 500M
+    #     reservations:
+    #       memory: 128M
       
 
 

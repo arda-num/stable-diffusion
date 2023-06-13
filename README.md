@@ -20,19 +20,23 @@ This API is used to remove the background of an image and place the product on a
 git clone https://github.com/arda-num/stable-diffusion.git
 ```
 
-### 2. Build the docker image
+### 2. 
+
+#### (OPTION 1) Build the docker image with docker-compose
 
 ```bash
-docker build -t background-removal-api .
+docker-compose up
 ```
 
-### 3. Run the docker container
+#### (OPTION 2) Install the dependencies and run the API
 
 ```bash
-docker run -d --name background-removal-api -p 80:80 background-removal-api
+pip install -r requirements.txt
+uvicorn main:app --reload
 ```
 
-### 4. Test the API (Sample Requests)
+
+### 3. Test the API (Sample Requests)
 
 #### Inpainting
 ```bash
@@ -46,3 +50,8 @@ curl -o download.png --location --request POST 'http://127.0.0.1:8000/inpaint' \
 curl -o download.png --location --request POST 'http://127.0.0.1:8000/removebackground' \
 --form 'image=@"path/to/image.png"' 
 ```
+## FAQ
+
+### If you are getting an error called "stable-diffusion-api-1 exited with code 137", 
+
+    This is because the docker container is running out of memory. You can increase the memory limit of the container by going to Docker Desktop -> Settings -> Resources -> Advanced -> Memory and increasing the memory limit OR changing the limits and reservations in docker-compose.yml file.
