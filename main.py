@@ -49,9 +49,6 @@ async def inpaint(prompt: Annotated[str, Form()], image: UploadFile):
 
     return FileResponse("generated_image.png", media_type="image/png")
 
-#write curl terminal request for removebackground below
-# curl -X POST "http://localhost:8000/removebackground" -H  "accept: image/png" -H  "Content-Type: multipart/form-data" -F "image=@/path/to/image"
-
 
 @app.post("/removebackground")
 async def removebg(image: UploadFile):
