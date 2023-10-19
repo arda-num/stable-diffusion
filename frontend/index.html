@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="file" id="imageUpload" accept="image/*" />
+        <div class="canvas-container">
+            <canvas id="originalCanvas" width="800" height="600"></canvas>
+            <canvas id="editCanvas" width="800" height="600"></canvas>
+        </div>
+        <div class="brush-controls">
+            <label for="eraserSize">Eraser Size:</label>
+            <input type="range" id="eraserSize" min="1" max="50" value="10" />
+            <label for="eraserShape">Eraser Shape:</label>
+            <select id="eraserShape">
+                <option value="round">Round</option>
+                <option value="square">Square</option>
+            </select>
+            <label for="zoomLevel">Zoom Level:</label>
+            <input type="range" id="zoomLevel" min="1" max="4" value="1" step="0.1" />
+        </div>
+        <button id="sendImage">Send Image</button>
+        <div id="imageDisplay" style="display: none;">
+            <h2>Received Image</h2>
+            <img id="receivedImage" src="" alt="Received Image" />
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

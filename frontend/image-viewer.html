@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Viewer</title>
+</head>
+<body>
+    <img id="image" src="" alt="View Image" />
+    <script>
+        // Extract image URL from the query parameter
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const imageUrl = urlParams.get('image');
+
+        // Display the image
+        const imageElement = document.getElementById('image');
+        imageElement.src = imageUrl;
+    </script>
+</body>
+</html>

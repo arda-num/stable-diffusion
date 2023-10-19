@@ -1,0 +1,19 @@
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+canvas {
+    border: 1px solid #000;
+}
+
+#originalCanvas {
+    margin-right: 20px; /* Add more spacing between canvases */
+}
+
+#editCanvas {
+    transform-origin: top left; /* Set the zoom origin to the top-left corner */
+}
